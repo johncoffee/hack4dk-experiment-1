@@ -6,9 +6,11 @@
 </head>
 <body>
 
-<div>
-    <div id="images_con"></div>
-    <div style="clear: both"></div>
+<div style="">
+    <div id="images_con" style="white-space: nowrap; 
+    height: 320px; width: 100%;
+     overflow-x: scroll">
+    </div>
 </div>
 
 <div>
@@ -17,10 +19,10 @@
 
 <template id="imgtpl">
     <div style="background: #fff url('{{src}}');
-    float: left;
-    height: 300px;
-    width: 300px;
-    background-size: contain"></div>
+        display: inline-block;
+        height: 300px;
+        width: 300px;
+        background-size: contain"></div>
 </template>
 
 
