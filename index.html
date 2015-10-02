@@ -7,12 +7,22 @@
 <body>
 
 <div>
-    
+    <div id="images_con"></div>
+    <div style="clear: both"></div>
 </div>
 
 <div>
     
 </div>
+
+<template id="imgtpl">
+    <div style="background: #fff url('{{src}}');
+    float: left;
+    height: 300px;
+    width: 300px;
+    background-size: contain"></div>
+</template>
+
 
 <!-- inject:js -->
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>

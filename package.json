@@ -18,6 +18,7 @@
   "homepage": "https://github.com/johncoffee/hack4dk-experiment-1#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
-    "gulp-inject": "^3.0.0"
+    "gulp-inject": "^3.0.0",
+    "walk": "^2.3.9"
   }
 }
