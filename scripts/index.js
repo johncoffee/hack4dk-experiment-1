@@ -23,6 +23,8 @@ var oldPeople = [
 ];
 
 $(function () {
+    // 
+    
     AuthService.onInstaLoginCallback = function (instagramObj) {
         fetchTags(instagramObj);
     };
@@ -31,14 +33,25 @@ $(function () {
 });
 
 
-function fetchTags(instagramObj) {
+function fetchTags(instagramObj, url) {
     ///tags/{{tag-name}}/media/recent
     
     //var req = instagramObj.get("https://api.instagram.com/v1/tags/hipster/media/recent");
-    var req = instagramObj.get("https://api.instagram.com/v1/users/self/feed");
+    var req = instagramObj.get(url || "https://api.instagram.com/v1/users/self/feed");
     
     req.done(function () {
         var json = req.responseJSON;
+
+        // pagination
+        document.querySelector("#load-more").onclick = function() {
+            var pagination = json.pagination;
+            if (pagination) {
+                console.info("next page: " + pagination.next_url);
+                fetchTags(instagramObj, pagination.next_url);
+            }
+        };
+        
+        // data
         console.debug(json);
         var posts = [];
         json.data.forEach(function (item) {
@@ -57,11 +70,15 @@ function fetchTags(instagramObj) {
             }
         });
         console.debug(posts);
-        instaImgs(posts);
+        renderPosts(posts);
     });
 }
 
-function instaImgs(posts) {
+/**
+ * Takes an array of "posts" which has fields: url, comments[] 
+ * @param {Array} posts
+ */
+function renderPosts(posts) {
     var postTpl = document.querySelector("#postTpl").innerHTML;
     var commentTpl = document.querySelector("#templateTpl").innerHTML;
     var postsHTML = "";
@@ -79,5 +96,5 @@ function instaImgs(posts) {
             .replace("{{comments}}", commentsHTML);
     });
     
-    document.querySelector("#posts").innerHTML = postsHTML;
+    document.querySelector("#posts").innerHTML += postsHTML;
 }

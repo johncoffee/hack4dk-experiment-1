@@ -6,15 +6,17 @@
 </head>
 <body style="background: #2f4980; color: #fff; font: 15px sans-serif">
 
-<div id="userbar"></div>
-
-<div id="posts" style="width: 600px; margin: 10px auto">
-
+<div style="width: 600px; margin: 10px auto">
+    <div id="posts"></div>
 </div>
+
+<p>
+    <button id="load-more">Load more...</button>
+</p>
 
 
 <template id="postTpl">
-    <div style="margin: 20px 0; border: 5px solid #fff;">
+    <div style="margin: 20px 0; border-left: 1px solid #fff;">
         <div src="" style="
             background: #fff url('{{src}}');
             background-size: cover;
