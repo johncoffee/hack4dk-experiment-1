@@ -23,6 +23,11 @@ var AuthService = (function () {
             },
         });
     });
+    
+    // to Override
+    that.onInstaLoginCallback = function () {
+        
+    };
 
     // dev stuff
     that.loginFake = function() {
@@ -74,7 +79,7 @@ var AuthService = (function () {
         .done(function(result) {
             console.log(result)
             // do some stuff with result
-            fetchTags(result);
+            that.onInstaLoginCallback(result);
         }).fail(function (err) {
             console.warn(err);
             //document.getElementById("nice").innerHTML = err;

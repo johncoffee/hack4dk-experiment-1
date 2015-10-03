@@ -23,6 +23,10 @@ var oldPeople = [
 ];
 
 $(function () {
+    AuthService.onInstaLoginCallback = function (instagramObj) {
+        fetchTags(instagramObj);
+    };
+    
     AuthService.openInstagramPopup();
 });
 
@@ -30,7 +34,7 @@ $(function () {
 function fetchTags(instagramObj) {
     ///tags/{{tag-name}}/media/recent
     
-    //var req = instagramObj.get("https://api.instagram.com/v1/tags/cat/media/recent");
+    //var req = instagramObj.get("https://api.instagram.com/v1/tags/hipster/media/recent");
     var req = instagramObj.get("https://api.instagram.com/v1/users/self/feed");
     
     req.done(function () {
