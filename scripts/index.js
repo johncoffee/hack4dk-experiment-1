@@ -1,4 +1,4 @@
-var baseUrl = "//ragelse.dk/";
+var oldPeopleBaseURL = "//ragelse.dk/";
 var oldPeople = [
     './assets/images/16213259323_7dba16b75c_z.jpg',
     './assets/images/16443294914_32213cceff_z.jpg',
@@ -65,7 +65,7 @@ function fetchTags(instagramObj, url) {
             if (item.comments.data.length) {
                 posts.push({
                     //url: item.images.standard_resolution.url,
-                    url: baseUrl + oldPeople[Math.floor(oldPeople.length * Math.random())],
+                    url: oldPeopleBaseURL + oldPeople[Math.floor(oldPeople.length * Math.random())],
                     comments: comments,
                 });    
             }
