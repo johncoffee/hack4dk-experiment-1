@@ -62,7 +62,7 @@ var AuthService = (function () {
                 console.warn(err);
                 //document.getElementById('nice').innerHTML = err;
             }
-            else {
+            else {  
                 callback(res);
             }
             //console.debug(res);

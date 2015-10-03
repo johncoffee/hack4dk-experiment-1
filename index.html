@@ -4,33 +4,32 @@
 <meta charset="UTF-8">
 <title>experiment 1</title>
 </head>
-<body>
+<body style="background: navy; color: #fff;">
 
 <div id="userbar"></div>
 
-<div style="">
-    <div id="images_con" style="white-space: nowrap; 
-    height: 320px; width: 100%;
-     overflow-x: scroll">
-    </div>
+<div id="posts" style="width: 800px; margin: 10px auto">
+
 </div>
 
-<div>
-    <div id="images_con2" style="white-space: nowrap; 
-    height: 320px; width: 100%;
-     overflow-x: scroll">
-    </div>
-</div>
 
-<template id="imgtpl">
-    <div style="background: #fff url('{{src}}');
-        display: inline-block;
-        height: 300px;
-        width: 300px;
-        background-size: contain"></div>
+<template id="postTpl">
+    <div style="margin: 20px 0; border: 5px solid #fff; padding: 15px">
+        <img src="{{src}}" style="
+            height: auto;
+            width: 100%;
+        ">
+        <div style="margin: 10px">
+            {{comments}}
+        </div>
+        <p><hr></p>
+    </div>
 </template>
 
-
+<template id="templateTpl">
+    <div>{{name}}:</div>
+    <div>{{text}}</div>
+</template>
 
 
 <!-- inject:js -->
