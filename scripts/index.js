@@ -30,7 +30,6 @@ $(function () {
     AuthService.onInstaLoginCallback = function (instagramObj) {
         fetchTags(instagramObj);
         $("#login-button").hide();
-        $("load-more").show();
     };
 });
 
@@ -73,6 +72,8 @@ function fetchTags(instagramObj, url) {
         });
         console.debug(posts);
         renderPosts(posts);
+
+        $("#load-more").show();
     });
 }
 

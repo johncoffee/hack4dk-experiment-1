@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>experiment 1</title>
+    <style>
+        button {
+            font-size: 1.5em;
+        }
+        body, a {
+            color: #fff;
+        }
+    </style>
 </head>
-<body style="background: #2f4980; color: #fff; font: 15px sans-serif">
+<body style="background: #2f4980; font: 15px sans-serif">
 
 <p>
     <a target="_blank" href="https://www.flickr.com/photos/130504952@N03/albums/72157650969693930/with/16914500592/">
@@ -13,7 +21,7 @@
 </p>
 <p><button id="login-button">Login with instagram!</button></p>
 
-<div style="width: 600px; margin: 10px auto">
+<div style="width: 550px; margin: 20px 0 20px 20px;">
     <div id="posts"></div>
 </div>
 
@@ -23,7 +31,7 @@
 
 
 <template id="postTpl">
-    <div style="margin: 20px 0; border-left: 1px solid #fff;">
+    <div style="margin: 35px 0; border-left: 1px solid #fff;">
         <div src="" style="
             background: #fff url('{{src}}');
             background-size: cover;
