@@ -23,13 +23,15 @@ var oldPeople = [
 ];
 
 $(function () {
-    // 
+    document.querySelector("#login-button").onclick = function() {
+        AuthService.openInstagramPopup();
+    };
     
     AuthService.onInstaLoginCallback = function (instagramObj) {
         fetchTags(instagramObj);
+        $("#login-button").hide();
+        $("load-more").show();
     };
-    
-    AuthService.openInstagramPopup();
 });
 
 

@@ -1,10 +1,7 @@
 var AuthService = (function () {
     var that = {};
 
-    if (!localStorage.instagramApiKey) {
-        console.warn('missing API key in instagramApiKey')
-    }
-    OAuth.initialize(localStorage.instagramApiKey);
+    OAuth.initialize("HQhgCWlkMGf1LCEbLQyJ3197he4");
     
     var _fields = ['username', 'userID'];
     
