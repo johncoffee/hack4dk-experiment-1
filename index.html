@@ -4,31 +4,32 @@
 <meta charset="UTF-8">
 <title>experiment 1</title>
 </head>
-<body style="background: navy; color: #fff;">
+<body style="background: #2f4980; color: #fff; font: 15px sans-serif">
 
 <div id="userbar"></div>
 
-<div id="posts" style="width: 800px; margin: 10px auto">
+<div id="posts" style="width: 600px; margin: 10px auto">
 
 </div>
 
 
 <template id="postTpl">
-    <div style="margin: 20px 0; border: 5px solid #fff; padding: 15px">
-        <img src="{{src}}" style="
-            height: auto;
-            width: 100%;
-        ">
+    <div style="margin: 20px 0; border: 5px solid #fff;">
+        <div src="" style="
+            background: #fff url('{{src}}');
+            background-size: cover;
+            display: inline-block;
+            height: 500px;
+            width: 500px;
+        "></div>
         <div style="margin: 10px">
             {{comments}}
         </div>
-        <p><hr></p>
     </div>
 </template>
 
 <template id="templateTpl">
-    <div>{{name}}:</div>
-    <div>{{text}}</div>
+    <div><strong>{{name}}:</strong> {{text}}</div>
 </template>
 
 
