@@ -1,4 +1,6 @@
-var oldPeople = [ './assets/images/16213259323_7dba16b75c_z.jpg',
+var baseUrl = "//ragelse.dk/";
+var oldPeople = [
+    './assets/images/16213259323_7dba16b75c_z.jpg',
     './assets/images/16443294914_32213cceff_z.jpg',
     './assets/images/16656845429_425b8305e4_z.jpg',
     './assets/images/16841568492_3684de3c87_z.jpg',
@@ -45,7 +47,7 @@ function fetchTags(instagramObj) {
             if (item.comments.data.length) {
                 posts.push({
                     //url: item.images.standard_resolution.url,
-                    url: oldPeople[Math.floor(oldPeople.length * Math.random())],
+                    url: baseUrl + oldPeople[Math.floor(oldPeople.length * Math.random())],
                     comments: comments,
                 });    
             }
